@@ -13,14 +13,15 @@ important notes to remeber:
 
 example file layout of the asset downloader:
 ```
-meshes/
-  tesla/
-    wheel/
-      wheel.obj
-      wheel.png
-      wheel.mtl
-sounds/
-  car_drive.mp4
+your_place_file_name_here/
+  meshes/
+    tesla/
+      wheel/
+        wheel.obj
+        wheel.png
+        wheel.mtl
+  sounds/
+    car_drive.mp4
 ```
 
 ## security
