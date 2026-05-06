@@ -10,9 +10,10 @@ marketplace and is lowercase and under snake_case with a primary folder with the
 #### models
 * models are a file folder when downloading, so if a mesh part is under a model there will be a folder with the model's name
   and the mesh inside it. this can stack with multiple models inside each other.
-* if a model with the property tag 'downloadable_model', it will convert the model into like a combined mesh. this can work with meshes inside of it. to set this tag just add a StringValue inside the model named 'downloadable_model' and the downloader will see it.
+* if a model with the property tag 'downloadable_model', it will convert the model into like a combined obj with every mesh, model, or part inside. to set this tag just add a StringValue inside the model named 'downloadable_model' and the downloader will see it.
 #### parts
-* parts can be downloadable with the property tag 'downloadable_part', doing the same as meshes when download but converts it into a mesh to be able to download. just add a StringValue inside the part named 'downloadable_part'.
+* parts can be downloadable with the property tag 'downloadable_part', doing the same as models when download but converts it into a obj to be able to download. just add a StringValue inside the part named 'downloadable_part'.
+* when converting a part into an obj it will download the material texture ( that is built into the game ) with the part's color.
 ### audios
 audios are downloaded with the name from the game or the marketplace as an ogg or an mp3.
 * also note: they are extracted from scripts and anything that is a sound file.
