@@ -26,7 +26,7 @@ animations are downloaded as `.rbxm` files from the game file. the downloader wi
 
 ## usage
 yes you just need the place file! just run the downloader with your `.rbxlx` file and it will download everything for you. i do recommend to use it a simpler way though - make a new roblox place with the assets you want to download 
-inside without the baseplate and the spawn point. make sure the files are organized in folders so the downloader respects the hierarchy.
+inside without the baseplate and the spawn point. make sure the files are organized in folders so the downloader respects the hierarchy. or if you just want to be lazy, just download it in the `.rbxlx` file format and just put it in ( only for people like me that are lazy 🙄 )
 
 important notes to remember:
  - it can only work with .rbxlx files
