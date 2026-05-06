@@ -3,17 +3,16 @@ this is a download so you can easily download game assets from a rblx game file 
 
 ## features
 here are some features that are neat for downloading these games:
-- note all downloads are under a a primary folder with the type these are `meshes`, `sounds`, `animations`, `textures`
-- the primary folder is where all of the main catorgeory's downloads are.
+- note all downloads are under a a primary folder ( the place file's name ) with these file folders inside: `meshes`, `sounds`, `animations`, `textures`.
 ### meshes
 all meshes are downloaded with the texture belonging with it and the mtl file. their name is the meshe's name in the game or the
 marketplace and is lowercase and under snake_case with a primary folder with the mesh's name. meshes are always an obj.
 #### models
-* models are file folders so if a mesh part is under a model there will be a folder with the model's name
-  and the mesh. this can stack.
-* if a model with the property tag 'downloadable_model', doing the same as meshes when download but with everything under it.
+* models are a file folder when downloading, so if a mesh part is under a model there will be a folder with the model's name
+  and the mesh inside it. this can stack with multiple models inside each other.
+* if a model with the property tag 'downloadable_model', it will convert the model into like a combined mesh. this can work with meshes inside of it.
 #### parts
-* parts can be downloadable with the property tag 'downloadable_part', doing the same as meshes when download but convert's it into a mesh
+* parts can be downloadable with the property tag 'downloadable_part', doing the same as meshes when download but convert's it into a mesh to be able to download.
 ### audios
 audios are downloaded with the name from the game or the marketplace as an ogg or an mp3.
 * also note: they are extracted from scripts and anything that is a sound file.
