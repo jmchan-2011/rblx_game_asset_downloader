@@ -13,7 +13,7 @@ marketplace and is lowercase and under snake_case with a primary folder with the
 * if a model with the property tag 'downloadable_model', it will convert the model into like a combined obj with every mesh, model, or part inside. to set this tag just add a StringValue inside the model named 'downloadable_model' and the downloader will see it.
 #### parts
 * parts can be downloadable with the property tag 'downloadable_part', doing the same as models when download but converts it into a obj to be able to download. just add a StringValue inside the part named 'downloadable_part'.
-* when converting a part into an obj it will download the material texture ( that is built into the game ) with the part's color.
+* when converting a part into a obj it will download the material texture ( that is built into the game ) with the part's color.
 ### audios
 audios are downloaded with the name from the game or the marketplace as an ogg or an mp3.
 * also note: they are extracted from scripts and anything that is a sound file.
@@ -50,14 +50,88 @@ your_place_file_name_here/
     metal.png
 ```
 
-example place file organization (before downloading):
+example place file organization ( before downloading ):
 ```
 Workspace
-  Tesla (Folder)
-    Wheel (Model)
+  Tesla ( Folder )
+    Wheel ( Model )
       MeshPart
         SpecialMesh
 ```
+
+longer one ( sorry 😢 ):
+```
+my_game_place/
+├── meshes/
+│   ├── tesla/
+│   │   ├── wheel_front/
+│   │   │   ├── wheel_front.obj
+│   │   │   ├── wheel_front.mtl
+│   │   │   └── wheel_front.png
+│   │   ├── wheel_back/
+│   │   │   ├── wheel_back.obj
+│   │   │   ├── wheel_back.mtl
+│   │   │   └── wheel_back.png
+│   │   └── body/
+│   │       └── car_body/
+│   │           ├── car_body.obj
+│   │           ├── car_body.mtl
+│   │           └── car_body.png
+│   └── trees/
+│       └── tree1/
+│           ├── trunk/
+│           │   ├── trunk.obj
+│           │   ├── trunk.mtl
+│           │   └── trunk.png
+│           └── leaves/
+│               ├── leaves.obj
+│               ├── leaves.mtl
+│               ├── leaves.png
+│               └── part_color.json
+├── sounds/
+│   └── background_music.mp3
+├── textures/
+│   └── metal_texture.png
+└── download_log.json
+```
+
+example place file organization ( before downloading ):
+```
+Workspace
+  Tesla ( Model )
+    Wheel_Front ( MeshPart )
+    Wheel_Back ( MeshPart )
+    Body ( Model )
+      CarBody ( MeshPart )
+  Trees ( Folder )
+    Tree1 ( Model )
+      Trunk ( MeshPart )
+      Leaves ( MeshPart with downloadable_part tag )
+  BackgroundMusic ( Sound )
+  MetalTexture ( Texture in ReplicatedStorage )
+```
+
+## download_log.json example
+the downloader saves a log file so you can track what was downloaded and avoid duplicate downloads. each asset is stored with its roblox id so the downloader can check if it already downloaded it before:
+
+```json
+{
+  "place_file": "my_game_place.rbxlx",
+  "timestamp": "2026-05-06T21:45:30Z",
+  "total_downloaded": {
+    "meshes": 3,
+    "textures": 1,
+    "sounds": 1,
+    "animations": 0
+  },
+  "meshes": [ 12345678, 12345679, 12345680 ],
+  "sounds": [ 11111111 ],
+  "textures": [ 99999999 ],
+  "animations": [ 88888888 ]
+}
+```
+
+the downloader will check these lists and only download assets that are not already in the log. this way if you run it again it wont download the same stuff twice.
 
 ## how to use
 1. create a place file with your assets organized in folders/models
