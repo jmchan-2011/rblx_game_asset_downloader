@@ -1,13 +1,33 @@
 # rblx_game_asset_downloader
 this is a download so you can easily download game assets from a rblx game file into a obj with image files a mtl files.
 
+## features
+here are some features that are neat for downloading these games:
+- note all downloads are under a a primary folder with the type these are `meshes`, `sounds`, `animations`, `textures`
+- the primary folder is where all of the main catorgeory's downloads are.
+### meshes
+all meshes are downloaded with the texture belonging with it and the mtl file. their name is the meshe's name in the game or the
+marketplace and is lowercase and under snake_case with a primary folder with the mesh's name. meshes are always an obj.
+#### models
+* models are file folders so if a mesh part is under a model there will be a folder with the model's name
+  and the mesh. this can stack.
+* if a model with the property tag 'downloadable_model', doing the same as meshes when download but with everything under it.
+#### parts
+* parts can be downloadable with the property tag 'downloadable_part', doing the same as meshes when download but convert's it into a mesh
+### audios
+audios are downloaded with the name from the game or the marketplace as an ogg or an mp3.
+* also note: they are extracted from scripts and anything that is a sound file.
+### texture
+any texture in the game but not the mesh's texture. they are a `.png` file
+* note: like audios, they can be extracted from scripts or anything that is an image file.
+### animations
+i dont know about animations in a game but i will think of this later
+
 ## usage
 i do reconmend to use it a simpler way. a new roblox place with the assets you want to download 
 inside without the baseplate and the spawn point. make sure the files are organised.
 
-important notes to remeber:
- - it will only make folders if the mesh is in a model or a folder
- - all image files will be an png, meshes will be a obj, sounds will be a mp3.
+important notes to remember:
  - it can only work with .rblxlx
  - you might have to use your .ROBLOSECURITY cookie 🍪, i do reconmened if you dont want to use your cookie just use an alt.
 
